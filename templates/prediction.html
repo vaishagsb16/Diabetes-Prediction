@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Early Detection Of Diabetes Disease Using Machine Learning</title>
+    <!-- Bootstrap CSS link -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="scroll-up-btn">
+        <i class="fas fa-angle-up"></i>
+    </div>
+    <nav class="navbar navbar-expand-lg bg-dark-custom bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Diabetes<span>Prediction</span></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a href="{{url_for('home')}}" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{url_for('bmi')}}" class="nav-link">BMI</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{url_for('prediction')}}" class="nav-link">Diabetes Predictor</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{url_for('aboutus')}}" class="nav-link">About Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+<section class="home" id="home">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="home-content text-center">
+          <h1>Diabetes Predictor</h1>
+          <form method="POST">
+            <div class="form-group">
+              <label for="pregs">Pregnancies :</label>
+              <input type="number" id="pregs" name="pregs" step="0.01" required placeholder="No. of Pregnancies" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="gluc">Glucose Level :</label>
+              <input type="number" id="gluc" name="gluc" step="0.01" required placeholder="Glucose Level (in mg/dL)" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="bp">Blood Pressure:</label>
+              <input type="number" id="bp" name="bp" step="0.01" required placeholder="Blood Pressure (in mm Hg)" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="skin">Skin Thickness :</label>
+              <input type="number" id="skin" name="skin" step="0.01" required placeholder="Skin Thickness (in mm)" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="insulin">Insulin :</label>
+              <input type="number" id="insulin" name="insulin" step="0.01" required placeholder="Insulin" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="bmi">BMI :</label>
+              <input type="number" id="bmi" name="bmi" step="0.01" required placeholder="BMI" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="func">Diabetes Pedigree Function :</label>
+              <input type="number" id="func" name="func" step="0.001" required placeholder="Diabetes Pedigree Function" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="age">Age :</label>
+              <input type="number" id="age" name="age" step="0.01" required placeholder="Age (in yrs)" class="form-control">
+            </div>
+            <div class="form-group text-center">
+              <input type="submit" value="Predict" class="btn btn-primary">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="container" style="display: flex; justify-content: center; align-items: center; height: 5vh; font-size: 2rem;">
+    <form action="" method="POST">
+    <div class="result-message">
+      {% if prediction != -1 %}
+        <p style="text-align: center; padding-top: 50px;">
+          {% if prediction == 0 %}
+            You do not have diabetes!
+          {% else %}
+            You have Diabetes!
+          {% endif %}
+          {% if heart_disease_risk %}
+            , You have a risk of Heart Disease!
+          {% endif %}
+        </p>
+      {% endif %}
+    </div>
+  </form>
+</div>
+<!-- footer section start -->
+<footer class="mt-5 py-3 bg-dark-custom text-red">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center text-white">
+                <span>Created By, Naresh K | Shibu A | Vaishag SB | Vishnu Murugan</span>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

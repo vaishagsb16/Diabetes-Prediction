@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Early Detection Of Diabetes Disease Using Machine Learning</title>
+    <!-- Bootstrap CSS link -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="scroll-up-btn">
+        <i class="fas fa-angle-up"></i>
+    </div>
+    <nav class="navbar navbar-expand-lg bg-dark-custom bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Diabetes<span>Prediction</span></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a href="{{url_for('home')}}" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{url_for('bmi')}}" class="nav-link">BMI</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{url_for('prediction')}}" class="nav-link">Diabetes Predictor</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{url_for('aboutus')}}" class="nav-link">About Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- home section start -->
+    <section class="home" id="home">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 mx-auto text-center">
+                    <div class="text-1">Early Detection Of Diabetes Disease Using</div>
+                    <div class="text-2">Machine Learning</div>
+                    <a href="{{url_for('prediction')}}" class="btn btn-primary mt-3">Diabetes Predictor</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- about section start -->
+<section class="about" id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="{{ url_for('static', filename='db.png')}}" class="img-fluid">
+            </div>
+            <div class="col-md-6">
+                <h2 class="title">Project Description</h2>
+                <div class="text">Diabetes Prediction & Heart Disease Risk Using Machine Learning</div>
+                <p class="justify" style="text-align: justify;">In this project, the objective is to predict whether the person has Diabetes or not based on various features like Glucose Level, Blood Pressure Level, Insulin Level, Age, BMI, etc. And also while predicting diabetes using the inputs like Glucose Level, Blood Pressure Level and Insulin Level we can also identify the risk of Heart Disease. The dataset that has used in this project has taken from the kaggle. "This dataset is originally from the National Institute of Diabetes and Digestive and Kidney Diseases. The objective of the dataset is to diagnostically predict whether or not a patient has diabetes, based on certain diagnostic measurements included in the dataset. Several constraints were placed on the selection of these instances from a larger database. In particular, all patients here are females at least 21 years old of Pima Indian heritage." </p>
+                <a href="#" class="btn btn-primary">Algorithm : SVM</a>
+                <a href="#" class="btn btn-secondary">Accuracy : 83%</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- footer section start -->
+<footer class="mt-5 py-3 bg-dark-custom">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center text-white">
+                <span>Created By, Naresh K | Shibu A | Vaishag SB | Vishnu Murugan</span>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
